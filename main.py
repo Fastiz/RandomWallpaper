@@ -5,7 +5,9 @@ import random
 
 def main():
     try:
-        f = open("paths.txt", "r")
+	__location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
+
+        f = open(os.path.join(__location__, "paths.txt"), "r")
         lines = f.read().splitlines()
         f.close()
     except:
