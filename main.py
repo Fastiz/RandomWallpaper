@@ -9,10 +9,11 @@ def main():
 
         f = open(os.path.join(__location__, "paths.txt"), "r")
         lines = f.read().splitlines()
-        f.close()
     except:
         print("Error occurred when reading paths.txt file")
         return 1
+    finally:
+	f.close()
 
     wallpapers = []
 
